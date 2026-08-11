@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, CheckCircle } from "lucide-react";
+import { Award, CheckCircle, Quote, Star } from "lucide-react";
 import Button from "@/components/ui/Button";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { useContent } from "@/lib/content-store";
 
 const highlights = [
@@ -17,26 +18,52 @@ export default function LifeCoaching() {
   const { home } = content;
 
   return (
-    <section className="bg-gradient-to-br from-primary to-primary/90 py-16 text-white lg:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+    <section className="relative overflow-hidden py-20 lg:py-28">
+      <div className="absolute inset-0 mesh-gradient-dark" />
+      <div className="absolute inset-0 grid-pattern opacity-10" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          badge="Meet Your Coach"
+          title={home.lifeCoachName}
+          subtitle={home.lifeCoachTitle}
+          light
+        />
+
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="relative mx-auto max-w-md lg:max-w-none"
           >
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl">
+            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-secondary/30 to-primary/30 blur-xl" />
+            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={home.lifeCoachImage}
                 alt={home.lifeCoachName}
                 className="h-full w-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             </div>
-            <div className="absolute -bottom-4 -right-4 flex items-center gap-2 rounded-xl bg-secondary px-4 py-3 shadow-lg">
+
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -bottom-5 -right-5 flex items-center gap-2 rounded-2xl bg-secondary px-5 py-3 text-white shadow-xl"
+            >
               <Award className="h-5 w-5" />
               <span className="text-sm font-semibold">Certified Life Coach</span>
+            </motion.div>
+
+            <div className="absolute -left-4 top-8 rounded-2xl glass-dark p-4 text-white">
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-secondary text-secondary" />
+                ))}
+              </div>
+              <p className="mt-1 text-xs text-white/80">Trusted by 500+ clients</p>
             </div>
           </motion.div>
 
@@ -44,25 +71,32 @@ export default function LifeCoaching() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-6 text-white"
           >
-            <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold">
-              Meet Your Coach
-            </span>
-            <h2 className="text-3xl font-bold sm:text-4xl">{home.lifeCoachName}</h2>
-            <p className="text-lg font-medium text-white/80">{home.lifeCoachTitle}</p>
-            <p className="leading-relaxed text-white/90">{home.lifeCoachBio}</p>
+            <div className="flex items-start gap-3">
+              <Quote className="mt-1 h-8 w-8 shrink-0 text-secondary/60" />
+              <p className="font-display text-xl leading-relaxed text-white/90 italic sm:text-2xl">
+                {home.lifeCoachBio}
+              </p>
+            </div>
 
-            <ul className="space-y-3">
-              {highlights.map((item) => (
-                <li key={item} className="flex items-center gap-3">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {highlights.map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center gap-3 rounded-xl glass-dark px-4 py-3"
+                >
                   <CheckCircle className="h-5 w-5 shrink-0 text-secondary" />
-                  <span className="text-white/90">{item}</span>
-                </li>
+                  <span className="text-sm text-white/90">{item}</span>
+                </motion.div>
               ))}
-            </ul>
+            </div>
 
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="secondary" size="lg" className="mt-4">
               Schedule a Session
             </Button>
           </motion.div>

@@ -46,39 +46,39 @@ export default function AdminPanel() {
 
   if (!isAdmin) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center px-4">
+      <div className="flex min-h-[70vh] items-center justify-center px-4 mesh-gradient">
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           onSubmit={handleLogin}
-          className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-8 shadow-lg"
+          className="w-full max-w-md overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-primary/10"
         >
-          <div className="mb-6 text-center">
-            <Lock className="mx-auto h-10 w-10 text-primary" />
-            <h2 className="mt-4 text-2xl font-bold text-gray-900">Admin Login</h2>
-            <p className="mt-2 text-sm text-gray-500">
-              Enter your password to access the content management panel.
+          <div className="bg-gradient-to-r from-primary to-primary/90 px-8 py-10 text-center text-white">
+            <Lock className="mx-auto h-10 w-10" />
+            <h2 className="mt-4 font-display text-2xl font-bold">Admin Portal</h2>
+            <p className="mt-2 text-sm text-white/70">Content Management System</p>
+          </div>
+          <div className="p-8">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter admin password"
+              className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            />
+            {loginError && (
+              <p className="mt-2 text-sm text-red-500">Invalid password. Please try again.</p>
+            )}
+            <button
+              type="submit"
+              className="mt-4 w-full rounded-full bg-primary py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
+            >
+              Sign In to Dashboard
+            </button>
+            <p className="mt-4 text-center text-xs text-gray-400">
+              Default password: eie-admin-2026
             </p>
           </div>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            className="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-          />
-          {loginError && (
-            <p className="mt-2 text-sm text-red-500">Invalid password. Please try again.</p>
-          )}
-          <button
-            type="submit"
-            className="mt-4 w-full rounded-full bg-primary py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
-          >
-            Sign In
-          </button>
-          <p className="mt-4 text-center text-xs text-gray-400">
-            Default password: eie-admin-2026
-          </p>
         </motion.form>
       </div>
     );
@@ -100,41 +100,32 @@ export default function AdminPanel() {
   const labelClass = "mb-1 block text-xs font-medium text-gray-600";
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Content Management</h1>
-          <p className="text-sm text-gray-500">Edit site content, images, and theme colors</p>
-        </div>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={handleSave}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary/90"
-          >
-            <Save className="h-4 w-4" />
-            {saved ? "Saved!" : "Save Changes"}
-          </button>
-          <button
-            type="button"
-            onClick={resetContent}
-            className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50"
-          >
-            <RotateCcw className="h-4 w-4" />
-            Reset
-          </button>
-          <button
-            type="button"
-            onClick={logout}
-            className="inline-flex items-center gap-2 rounded-full border border-red-200 px-5 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50"
-          >
-            <LogOut className="h-4 w-4" />
-            Logout
-          </button>
+    <div className="min-h-screen bg-surface">
+      <div className="bg-gradient-to-r from-primary to-primary/90 px-4 py-8 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
+          <div>
+            <h1 className="font-display text-2xl font-bold">Content Dashboard</h1>
+            <p className="text-sm text-white/70">Manage site content, images, and theme</p>
+          </div>
+          <div className="flex gap-2">
+            <button type="button" onClick={handleSave} className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary hover:bg-white/90">
+              <Save className="h-4 w-4" />
+              {saved ? "Saved!" : "Save"}
+            </button>
+            <button type="button" onClick={resetContent} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium hover:bg-white/20">
+              <RotateCcw className="h-4 w-4" />
+              Reset
+            </button>
+            <button type="button" onClick={logout} className="inline-flex items-center gap-2 rounded-full bg-red-500/20 px-5 py-2.5 text-sm font-medium hover:bg-red-500/30">
+              <LogOut className="h-4 w-4" />
+              Logout
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-[240px_1fr]">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[240px_1fr]">
         <nav className="flex flex-row gap-1 overflow-x-auto lg:flex-col lg:overflow-visible">
           {tabs.map((tab) => (
             <button
@@ -609,6 +600,7 @@ export default function AdminPanel() {
               </div>
             </div>
           )}
+        </div>
         </div>
       </div>
     </div>

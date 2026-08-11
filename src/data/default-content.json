@@ -14,7 +14,8 @@
     "lifeCoachName": "Sharon Bedford",
     "lifeCoachTitle": "Professional Life Coach",
     "lifeCoachBio": "Sharon Bedford works tirelessly to ensure follow-through on commitments to a better life and personal accountability. With compassion and dedication, she guides individuals through life's challenges, helping them discover their God-given purpose and walk confidently into their destiny.",
-    "lifeCoachImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
+    "lifeCoachImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+    "heroBadge": "Faith • Community • Transformation"
   },
   "about": {
     "title": "About Us",
@@ -22,7 +23,13 @@
     "missionText": "The Enough Is Enough Foundation is dedicated to helping individuals overcome life's obstacles through faith, community support, and professional life coaching. We believe that transformation starts from within, and we are here to celebrate every step of your journey toward a better life.",
     "overviewTitle": "Who We Are",
     "overviewText": "Founded on the principle that everyone deserves a chance to thrive, our foundation provides comprehensive programs for men and women seeking purpose, accountability, and community. Through grants and community contributions, we make our services accessible to those who need them most.",
-    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80"
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
+    "values": [
+      { "title": "Faith First", "description": "Rooted in God's truth as the foundation for all transformation.", "icon": "cross" },
+      { "title": "Accountability", "description": "Personal commitment and follow-through drive lasting change.", "icon": "target" },
+      { "title": "Community", "description": "No one walks alone — we celebrate every victory together.", "icon": "users" },
+      { "title": "Empowerment", "description": "Equipping individuals to discover and walk in their destiny.", "icon": "sparkles" }
+    ]
   },
   "services": {
     "title": "Our Services",
@@ -32,42 +39,60 @@
       {
         "id": "1",
         "title": "Men Of Hope",
+        "tag": "Mentorship",
         "description": "A comprehensive mentorship program empowering men to overcome challenges, build accountability, and discover their God-given purpose through community support and faith-based guidance.",
+        "longDescription": "Men Of Hope is our flagship mentorship program designed specifically for men seeking purpose, accountability, and community. Through weekly sessions, one-on-one coaching, and group fellowship, participants build the foundation for lasting transformation.",
+        "features": ["Weekly mentorship sessions", "Accountability partnerships", "Faith-based guidance", "Community support network", "Life skills workshops"],
         "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
         "icon": "users"
       },
       {
         "id": "2",
         "title": "How Much Do You Know",
+        "tag": "Education",
         "description": "An educational initiative designed to expand knowledge, build awareness, and foster personal growth through interactive workshops and community learning experiences.",
+        "longDescription": "How Much Do You Know challenges participants to expand their horizons through interactive workshops, community learning experiences, and awareness-building sessions that foster personal and collective growth.",
+        "features": ["Interactive workshops", "Community learning", "Awareness building", "Knowledge assessments", "Group discussions"],
         "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
         "icon": "book-open"
       },
       {
         "id": "3",
         "title": "When All of God's Children Gets Together",
+        "tag": "Unity",
         "description": "A unity-focused community program bringing people together across backgrounds to foster understanding, fellowship, and collective empowerment through faith.",
+        "longDescription": "This unity-focused program brings people together across all backgrounds to foster understanding, fellowship, and collective empowerment. Through faith-centered gatherings and community events, we celebrate what happens when God's children come together.",
+        "features": ["Community unity events", "Cross-cultural fellowship", "Faith-centered gatherings", "Collective empowerment", "Shared meals & worship"],
         "image": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80",
         "icon": "heart-handshake"
       },
       {
         "id": "4",
         "title": "Connecting to My RIB",
+        "tag": "Personal Growth",
         "description": "A personal development program helping individuals connect with their inner strength, relationships, identity, and beliefs to build a foundation for lasting transformation.",
+        "longDescription": "Connecting to My RIB helps individuals connect with their inner strength, Relationships, Identity, and Beliefs. This holistic program builds a foundation for lasting personal transformation through guided self-discovery.",
+        "features": ["Self-discovery sessions", "Relationship building", "Identity exploration", "Belief system alignment", "Personal action plans"],
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
         "icon": "link"
       },
       {
         "id": "5",
         "title": "Women Of Destiny",
+        "tag": "Empowerment",
         "description": "Empowering women to embrace their calling, overcome obstacles, and walk confidently into their destiny through mentorship, support groups, and faith-centered coaching.",
+        "longDescription": "Women Of Destiny empowers women to embrace their calling and walk confidently into their destiny. Through mentorship circles, support groups, and faith-centered coaching, participants discover their purpose and overcome life's obstacles.",
+        "features": ["Women's mentorship circles", "Support group sessions", "Destiny coaching", "Celebration events", "Leadership development"],
         "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
         "icon": "sparkles"
       },
       {
         "id": "6",
         "title": "Housing for Men Of Hope",
+        "tag": "Housing",
         "description": "Providing safe, supportive housing solutions for men participating in the Men Of Hope program, creating a stable foundation for personal growth and community reintegration.",
+        "longDescription": "Our Housing for Men Of Hope program provides safe, supportive housing for men in the Men Of Hope mentorship program. Stable housing creates the foundation needed for personal growth, accountability, and successful community reintegration.",
+        "features": ["Safe housing solutions", "Supportive environment", "Program integration", "Life skills support", "Community reintegration"],
         "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
         "icon": "home"
       }
@@ -87,6 +112,8 @@
       {
         "id": "1",
         "title": "Finding Your Purpose Through Faith",
+        "featured": true,
+        "readTime": "5 min read",
         "excerpt": "Discover how faith-based life coaching can help you uncover your God-given purpose and walk confidently into your destiny.",
         "content": "At Enough Is Enough Foundation, we believe that every person has a unique purpose designed by God...",
         "category": "Life Coaching",
@@ -152,7 +179,8 @@
     "hours": "Monday thru Saturday, 9 AM - 5 PM",
     "instagram": "https://instagram.com",
     "facebook": "https://facebook.com",
-    "google": "https://google.com"
+    "google": "https://google.com",
+    "address": "Serving communities nationwide with faith-based programs and life coaching"
   },
   "boardMembers": [
     {
@@ -204,5 +232,79 @@
       "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
       "bio": "Bringing passion for youth mentorship and community engagement."
     }
+  ],
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Marcus Williams",
+      "role": "Men Of Hope Graduate",
+      "quote": "This foundation didn't just change my life — it gave me a purpose. Sharon and the team held me accountable and celebrated every step forward.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+      "rating": 5
+    },
+    {
+      "id": "2",
+      "name": "Angela Rivers",
+      "role": "Women Of Destiny Participant",
+      "quote": "Women Of Destiny helped me rediscover who I am in Christ. The community support here is unlike anything I've experienced.",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80",
+      "rating": 5
+    },
+    {
+      "id": "3",
+      "name": "David Thompson",
+      "role": "Life Coaching Client",
+      "quote": "Sharon Bedford's coaching gave me the tools to overcome obstacles I thought were impossible. I finally feel like I'm walking into my destiny.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+      "rating": 5
+    },
+    {
+      "id": "4",
+      "name": "Patricia Coleman",
+      "role": "Community Member",
+      "quote": "The Enough Is Enough Foundation is a beacon of hope. Their programs are funded by love, grants, and genuine care for people.",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
+      "rating": 5
+    }
+  ],
+  "stats": [
+    { "id": "1", "value": 500, "suffix": "+", "label": "Lives Transformed" },
+    { "id": "2", "value": 6, "suffix": "", "label": "Core Programs" },
+    { "id": "3", "value": 15, "suffix": "+", "label": "Years of Service" },
+    { "id": "4", "value": 98, "suffix": "%", "label": "Client Satisfaction" }
+  ],
+  "faqs": [
+    {
+      "id": "1",
+      "question": "How do I enroll in a program?",
+      "answer": "Contact us by phone at (855) 264-9103 or fill out our contact form. Our team will schedule an intake session to match you with the right program."
+    },
+    {
+      "id": "2",
+      "question": "Are your services free?",
+      "answer": "Many of our programs are funded through community contributions and grants. Contact us for pricing details — we work to make services accessible to all who need them."
+    },
+    {
+      "id": "3",
+      "question": "What is life coaching with Sharon Bedford?",
+      "answer": "Sharon provides professional faith-based life coaching focused on personal accountability, follow-through on commitments, and helping you walk into your God-given destiny."
+    },
+    {
+      "id": "4",
+      "question": "Do you offer housing assistance?",
+      "answer": "Yes! Our Housing for Men Of Hope program provides safe, supportive housing for men participating in the Men Of Hope mentorship program."
+    },
+    {
+      "id": "5",
+      "question": "How can I support the foundation?",
+      "answer": "You can support us through community contributions, volunteering, or spreading the word about our programs. Contact us to learn about partnership opportunities."
+    }
+  ],
+  "timeline": [
+    { "id": "1", "year": "2010", "title": "Foundation Established", "description": "Enough Is Enough Foundation was founded with a vision to lift individuals through faith-based community support." },
+    { "id": "2", "year": "2013", "title": "Men Of Hope Launched", "description": "Our flagship mentorship program for men was introduced, creating lasting community impact." },
+    { "id": "3", "year": "2016", "title": "Women Of Destiny", "description": "Expanded services to empower women through mentorship, support groups, and faith-centered coaching." },
+    { "id": "4", "year": "2019", "title": "Housing Program", "description": "Launched Housing for Men Of Hope, providing stable foundations for personal growth and reintegration." },
+    { "id": "5", "year": "2024", "title": "Community Expansion", "description": "Secured major grants to expand all six core programs and serve hundreds more families nationwide." }
   ]
 }

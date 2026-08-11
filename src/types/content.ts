@@ -10,14 +10,18 @@ export interface BoardMember {
   title: string;
   image: string;
   bio?: string;
+  email?: string;
 }
 
 export interface Service {
   id: string;
   title: string;
   description: string;
+  longDescription?: string;
   image: string;
   icon: string;
+  features?: string[];
+  tag?: string;
 }
 
 export interface BlogPost {
@@ -29,6 +33,37 @@ export interface BlogPost {
   image: string;
   date: string;
   author: string;
+  readTime?: string;
+  featured?: boolean;
+}
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  quote: string;
+  image: string;
+  rating: number;
+}
+
+export interface Stat {
+  id: string;
+  value: number;
+  suffix: string;
+  label: string;
+}
+
+export interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface TimelineItem {
+  id: string;
+  year: string;
+  title: string;
+  description: string;
 }
 
 export interface ContactInfo {
@@ -38,6 +73,7 @@ export interface ContactInfo {
   instagram: string;
   facebook: string;
   google: string;
+  address?: string;
 }
 
 export interface SiteContent {
@@ -53,6 +89,7 @@ export interface SiteContent {
     lifeCoachTitle: string;
     lifeCoachBio: string;
     lifeCoachImage: string;
+    heroBadge?: string;
   };
   about: {
     title: string;
@@ -61,6 +98,7 @@ export interface SiteContent {
     overviewTitle: string;
     overviewText: string;
     image: string;
+    values?: { title: string; description: string; icon: string }[];
   };
   services: {
     title: string;
@@ -82,4 +120,8 @@ export interface SiteContent {
   };
   contact: ContactInfo;
   boardMembers: BoardMember[];
+  testimonials: Testimonial[];
+  stats: Stat[];
+  faqs: FAQ[];
+  timeline: TimelineItem[];
 }

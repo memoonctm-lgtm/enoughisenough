@@ -35,6 +35,34 @@ function applyThemeColors(theme: SiteContent["theme"]) {
   document.documentElement.style.setProperty("--background", theme.background);
 }
 
+function mergeWithDefaults(stored: Partial<SiteContent>): SiteContent {
+  const defaults = defaultContent as SiteContent;
+  return {
+    ...defaults,
+    ...stored,
+    theme: { ...defaults.theme, ...stored.theme },
+    home: { ...defaults.home, ...stored.home },
+    about: { ...defaults.about, ...stored.about },
+    services: {
+      ...defaults.services,
+      ...stored.services,
+      items: stored.services?.items?.length ? stored.services.items : defaults.services.items,
+    },
+    specialOffers: { ...defaults.specialOffers, ...stored.specialOffers },
+    blog: {
+      ...defaults.blog,
+      ...stored.blog,
+      posts: stored.blog?.posts?.length ? stored.blog.posts : defaults.blog.posts,
+    },
+    contact: { ...defaults.contact, ...stored.contact },
+    boardMembers: stored.boardMembers?.length ? stored.boardMembers : defaults.boardMembers,
+    testimonials: stored.testimonials?.length ? stored.testimonials : defaults.testimonials,
+    stats: stored.stats?.length ? stored.stats : defaults.stats,
+    faqs: stored.faqs?.length ? stored.faqs : defaults.faqs,
+    timeline: stored.timeline?.length ? stored.timeline : defaults.timeline,
+  };
+}
+
 export function ContentProvider({ children }: { children: ReactNode }) {
   const [content, setContent] = useState<SiteContent>(defaultContent as SiteContent);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -44,7 +72,7 @@ export function ContentProvider({ children }: { children: ReactNode }) {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
-        setContent(JSON.parse(stored) as SiteContent);
+        setContent(mergeWithDefaults(JSON.parse(stored) as Partial<SiteContent>));
       }
       setIsAdmin(localStorage.getItem(AUTH_KEY) === "true");
     } catch {
@@ -92,8 +120,12 @@ export function ContentProvider({ children }: { children: ReactNode }) {
 
   if (!hydrated) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-white">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+      <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-white">
+        <div className="relative h-12 w-12">
+          <div className="absolute inset-0 animate-spin rounded-full border-4 border-primary/20 border-t-primary" />
+          <div className="absolute inset-2 animate-spin rounded-full border-2 border-secondary/20 border-b-secondary" style={{ animationDirection: "reverse", animationDuration: "0.8s" }} />
+        </div>
+        <p className="text-sm font-medium text-gray-500">Loading...</p>
       </div>
     );
   }
