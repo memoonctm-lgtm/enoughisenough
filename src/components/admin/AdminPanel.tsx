@@ -100,7 +100,7 @@ export default function AdminPanel() {
   const labelClass = "mb-1 block text-xs font-medium text-gray-600";
 
   return (
-    <div className="min-h-screen bg-surface">
+    <div className="min-h-screen bg-surface font-sans">
       <div className="bg-gradient-to-r from-primary to-primary/90 px-4 py-8 text-white sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
           <div>

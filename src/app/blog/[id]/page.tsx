@@ -77,9 +77,9 @@ export default function BlogPostPage() {
             <ArrowLeft className="h-4 w-4" /> Back to Blog
           </Link>
 
-          <div className="prose prose-lg max-w-none">
+          <div className="prose-content">
             <p className="text-xl leading-relaxed text-gray-600">{post.excerpt}</p>
-            <div className="mt-8 space-y-4 leading-relaxed text-gray-700">
+            <div className="mt-8 space-y-4 text-gray-700">
               <p>{post.content}</p>
               <p>
                 At the Enough Is Enough Foundation, we believe that transformation is a journey — not a destination.

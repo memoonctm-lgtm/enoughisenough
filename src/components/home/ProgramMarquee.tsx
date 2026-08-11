@@ -8,7 +8,7 @@ export default function ProgramMarquee() {
   const doubled = [...programs, ...programs];
 
   return (
-    <section className="overflow-hidden border-y border-gray-100 bg-surface py-5">
+    <section className="overflow-hidden border-y border-gray-100 bg-surface py-5 font-sans">
       <div className="flex animate-marquee whitespace-nowrap">
         {doubled.map((title, i) => (
           <span key={`${title}-${i}`} className="mx-8 flex items-center gap-4 text-sm font-semibold uppercase tracking-widest text-gray-400">

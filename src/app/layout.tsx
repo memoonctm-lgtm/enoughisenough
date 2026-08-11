@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { Cormorant_Garamond, Crimson_Pro, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ContentProvider } from "@/lib/content-store";
 
 const sourceSans = Source_Sans_3({
-  variable: "--font-body",
+  variable: "--font-ui",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const crimsonPro = Crimson_Pro({
+  variable: "--font-content-family",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const cormorant = Cormorant_Garamond({
@@ -36,8 +43,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sourceSans.variable} ${cormorant.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background font-sans text-foreground">
+    <html
+      lang="en"
+      className={`${crimsonPro.variable} ${sourceSans.variable} ${cormorant.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-background font-content text-foreground">
         <ContentProvider>{children}</ContentProvider>
       </body>
     </html>

@@ -18,42 +18,87 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-surface: var(--surface);
-  --font-sans: var(--font-body);
-  --font-display: var(--font-display);
+  --font-sans: var(--font-ui);
+  --font-content: var(--font-content-family);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), "Segoe UI", system-ui, sans-serif;
-  font-feature-settings: "kern" 1, "liga" 1;
-  line-height: 1.65;
-  letter-spacing: 0.01em;
+  font-family: var(--font-content-family), "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.0625rem;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+  line-height: 1.75;
+  letter-spacing: 0.015em;
 }
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
+/* Headlines — Cormorant Garamond */
 .font-display {
   font-family: var(--font-display), "Times New Roman", Georgia, serif;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display), "Times New Roman", Georgia, serif;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+/* Body content — Crimson Pro */
+.font-content {
+  font-family: var(--font-content-family), "Palatino Linotype", Georgia, serif;
+  letter-spacing: 0.015em;
+  line-height: 1.75;
+}
+
+p, li, blockquote, .prose-content {
+  font-family: var(--font-content-family), "Palatino Linotype", Georgia, serif;
+}
+
+/* UI chrome — Source Sans 3 */
+.font-sans,
+button,
+input,
+textarea,
+select,
+label,
+nav {
+  font-family: var(--font-ui), "Segoe UI", system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
 }
 
 .font-elegant {
-  font-family: var(--font-body), system-ui, sans-serif;
-  letter-spacing: 0.12em;
+  font-family: var(--font-ui), system-ui, sans-serif;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 0.6875rem;
+}
+
+/* Long-form reading */
+.prose-content {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: var(--foreground);
+}
+
+.prose-content p + p {
+  margin-top: 1.25em;
+}
+
+.prose-content em,
+.prose-content i {
+  font-style: italic;
 }
 
 ::selection {

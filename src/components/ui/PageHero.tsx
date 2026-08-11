@@ -54,7 +54,7 @@ export default function PageHero({ title, subtitle, badge, dark = false, childre
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className={cn(
-                "mx-auto mt-6 max-w-2xl text-lg leading-relaxed",
+                "mx-auto mt-6 max-w-2xl text-lg leading-relaxed font-content",
                 dark ? "text-white/80" : "text-gray-600"
               )}
             >

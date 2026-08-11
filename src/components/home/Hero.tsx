@@ -54,7 +54,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="max-w-xl text-lg leading-relaxed text-gray-600 sm:text-xl"
+              className="max-w-xl text-lg leading-relaxed text-gray-600 sm:text-xl font-content"
             >
               {home.heroSubheadline}
             </motion.p>

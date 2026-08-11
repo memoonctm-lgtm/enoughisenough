@@ -20,7 +20,7 @@ export default function Footer() {
   const { contact } = content;
 
   return (
-    <footer className="relative overflow-hidden bg-gray-950 text-white">
+    <footer className="relative overflow-hidden bg-gray-950 font-sans text-white">
       <div className="absolute inset-0 mesh-gradient-dark opacity-50" />
       <div className="absolute inset-0 grid-pattern opacity-10" />
 
