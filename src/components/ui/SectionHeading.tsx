@@ -30,7 +30,7 @@ export default function SectionHeading({
       {badge && (
         <span
           className={cn(
-            "mb-4 inline-block rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-widest",
+            "mb-4 inline-block rounded-full px-4 py-1 font-elegant text-[11px]",
             light ? "bg-white/10 text-white/90" : "bg-primary/10 text-primary"
           )}
         >
@@ -39,7 +39,7 @@ export default function SectionHeading({
       )}
       <h2
         className={cn(
-          "font-display text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl",
+          "font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl",
           light ? "text-white" : "text-gray-900"
         )}
       >

@@ -30,13 +30,13 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm font-semibold text-primary shadow-sm"
+              className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 font-elegant text-[11px] text-primary shadow-sm"
             >
               <Sparkles className="h-4 w-4 text-secondary" />
               {home.heroBadge || "Faith • Community • Transformation"}
             </motion.div>
 
-            <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
               {words.map((word, i) => (
                 <motion.span
                   key={`${word}-${i}`}

@@ -18,22 +18,42 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-surface: var(--surface);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-playfair);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-body), "Segoe UI", system-ui, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-display {
-  font-family: var(--font-playfair), Georgia, serif;
+  font-family: var(--font-display), "Times New Roman", Georgia, serif;
+  letter-spacing: -0.02em;
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), "Times New Roman", Georgia, serif;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.font-elegant {
+  font-family: var(--font-body), system-ui, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 ::selection {

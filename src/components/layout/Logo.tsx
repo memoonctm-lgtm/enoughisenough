@@ -55,9 +55,11 @@ export default function Logo({ className, showText = true, size = "md" }: LogoPr
         />
       </svg>
       {showText && (
-        <div className="flex flex-col leading-tight">
-          <span className={cn("font-bold text-primary", s.text)}>Enough Is Enough</span>
-          <span className={cn("font-medium text-gray-500", size === "sm" ? "text-xs" : "text-sm")}>
+        <div className="flex flex-col leading-none">
+          <span className={cn("font-display font-semibold tracking-tight text-primary", s.text)}>
+            Enough Is Enough
+          </span>
+          <span className={cn("font-elegant text-muted mt-0.5", size === "sm" ? "text-[10px]" : "text-[11px]")}>
             Foundation
           </span>
         </div>
